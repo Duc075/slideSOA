@@ -142,33 +142,46 @@
                 </div>
             </section>
 
-            <!-- Slide 7: Kiến trúc tổng thể -->
+            <!-- Slide 7: Kiến trúc tổng thể với thiết kế hình tròn -->
             <section>
                 <h2>KIẾN TRÚC TỔNG THỂ HỆ THỐNG</h2>
                 <div class="system-architecture">
-                    <div class="layer">
-                        <h3>Frontend Layer</h3>
-                        <p>Customer | Admin | Shipper</p>
+                    <div class="architecture-center">
+                        <h3>Integration Service<br>(API Gateway)</h3>
                     </div>
-                    <div class="arrow">↓</div>
-                    <div class="layer highlight">
-                        <h3>Integration Service (API Gateway/ESB)</h3>
-                        <p>Port 8000</p>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="services-layer">
-                        <div class="service">User<br>8001</div>
-                        <div class="service">Restaurant<br>8002</div>
-                        <div class="service">Order<br>8003</div>
-                        <div class="service">Delivery<br>8004</div>
-                        <div class="service">Payment<br>8005</div>
-                        <div class="service">Review<br>8006</div>
-                        <div class="service">Notification<br>8007</div>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="layer">
-                        <h3>Database Layer</h3>
-                        <p>SQLite per service + Redis Cache</p>
+                    <div class="architecture-orbit">
+                        <div class="orbit-item">
+                            <h4>👤 User</h4>
+                            <p>Port 8001</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>🍽️ Restaurant</h4>
+                            <p>Port 8002</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>📦 Order</h4>
+                            <p>Port 8003</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>🚚 Delivery</h4>
+                            <p>Port 8004</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>💳 Payment</h4>
+                            <p>Port 8005</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>⭐ Review</h4>
+                            <p>Port 8006</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>🔔 Notification</h4>
+                            <p>Port 8007</p>
+                        </div>
+                        <div class="orbit-item">
+                            <h4>🗄️ Database</h4>
+                            <p>SQLite + Redis</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -212,45 +225,37 @@
                 </div>
             </section>
 
-            <!-- Slide 9: Luồng tạo đơn hàng -->
+            <!-- Slide 9: Luồng tạo đơn hàng với thiết kế hình tròn -->
             <section>
                 <h2>LUỒNG TẠO ĐƠN HÀNG</h2>
-                <div class="flow-diagram">
-                    <div class="flow-step">1. Customer chọn món và tạo đơn</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">2. Order Service tạo đơn hàng</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">3. Payment Service tạo thông tin thanh toán</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">4. Customer thanh toán (SePay)</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">5. Webhook cập nhật trạng thái</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">6. Đơn hàng được xác nhận</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">7. Notification gửi thông báo</div>
+                <div class="circular-flow">
+                    <div class="flow-circle">
+                        <div class="flow-node"><span>1. Customer<br>chọn món</span></div>
+                        <div class="flow-node"><span>2. Tạo<br>đơn hàng</span></div>
+                        <div class="flow-node"><span>3. Tạo<br>thanh toán</span></div>
+                        <div class="flow-node"><span>4. Customer<br>thanh toán</span></div>
+                        <div class="flow-node"><span>5. Webhook<br>cập nhật</span></div>
+                        <div class="flow-node"><span>6. Xác nhận<br>đơn hàng</span></div>
+                        <div class="flow-node"><span>7. Gửi<br>thông báo</span></div>
+                        <div class="flow-node"><span>8. Hoàn<br>thành</span></div>
+                    </div>
                 </div>
             </section>
 
-            <!-- Slide 10: Luồng giao hàng -->
+            <!-- Slide 10: Luồng giao hàng với thiết kế hình tròn -->
             <section>
                 <h2>LUỒNG GIAO HÀNG</h2>
-                <div class="delivery-flow">
-                    <div class="flow-step">1. Delivery Service phân công shipper</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">2. Shipper nhận đơn (ASSIGNED)</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">3. Shipper lấy hàng (PICKING_UP)</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">4. Shipper giao hàng (DELIVERING)</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">5. Cập nhật vị trí realtime (Firebase)</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">6. Customer theo dõi trên bản đồ</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">7. Giao hàng thành công (DELIVERED)</div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">8. Customer đánh giá (Review Service)</div>
+                <div class="circular-flow">
+                    <div class="flow-circle">
+                        <div class="flow-node"><span>1. Phân công<br>shipper</span></div>
+                        <div class="flow-node"><span>2. Shipper<br>nhận đơn</span></div>
+                        <div class="flow-node"><span>3. Lấy<br>hàng</span></div>
+                        <div class="flow-node"><span>4. Bắt đầu<br>giao hàng</span></div>
+                        <div class="flow-node"><span>5. Cập nhật<br>vị trí</span></div>
+                        <div class="flow-node"><span>6. Tracking<br>realtime</span></div>
+                        <div class="flow-node"><span>7. Giao hàng<br>thành công</span></div>
+                        <div class="flow-node"><span>8. Đánh<br>giá</span></div>
+                    </div>
                 </div>
             </section>
 
