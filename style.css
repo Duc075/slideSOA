@@ -12,9 +12,9 @@
     --white-dim: rgba(248,250,252,0.75);
     --white-faint: rgba(248,250,252,0.12);
     --border: rgba(255,255,255,0.08);
-    --font-display: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
 }
 
 /* ===== BASE ===== */
@@ -24,9 +24,18 @@
     color: var(--white);
 }
 
+.reveal .slides {
+    text-align: left;
+}
+
 .reveal .slides section {
     height: 100%;
+    width: 100%;
     box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .reveal .progress {
@@ -53,19 +62,20 @@
 }
 
 .reveal h2 {
-    font-size: 2em;
-    font-weight: 800;
-    letter-spacing: 0.06em;
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: 0.02em;
     color: var(--white);
-    margin-bottom: 0.8em;
-    padding-bottom: 0.4em;
-    border-bottom: 3px solid var(--accent);
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 4px solid var(--accent);
     display: inline-block;
 }
 
 .reveal p {
     margin: 0;
     color: var(--white-dim);
+    font-size: 1.1em;
 }
 
 .reveal ul {
@@ -85,7 +95,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 60px 80px 50px;
+    justify-content: center;
+    padding: 70px 90px;
     box-sizing: border-box;
     background: var(--navy);
     position: relative;
@@ -232,18 +243,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 16px;
-    flex: 1;
+    gap: 28px;
 }
 
 .menu-item {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px 20px;
+    border-radius: 14px;
+    padding: 40px 32px;
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
     position: relative;
     overflow: hidden;
     transition: border-color 0.3s;
@@ -268,69 +279,69 @@
 
 .menu-number {
     font-family: var(--font-mono);
-    font-size: 2.5em;
-    font-weight: 700;
+    font-size: 3.5em;
+    font-weight: 900;
     color: var(--accent);
-    opacity: 0.5;
+    opacity: 0.4;
     line-height: 1;
     flex-shrink: 0;
 }
 
 .menu-item h3 {
     font-family: var(--font-display);
-    font-size: 1em;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-size: 1.15em;
+    font-weight: 800;
+    letter-spacing: 0.02em;
     color: var(--white);
-    margin-top: 4px;
+    text-align: left;
 }
 
 /* ===== REASON LIST SLIDE ===== */
 .reason-list-styled {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    flex: 1;
+    gap: 24px;
     justify-content: center;
 }
 
 .reason-item {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 32px;
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
-    border-radius: 12px;
-    padding: 20px 30px;
+    border-left: 5px solid var(--accent);
+    border-radius: 14px;
+    padding: 28px 40px;
 }
 
 .reason-icon {
-    font-size: 2em;
-    width: 48px;
+    font-size: 2.5em;
+    width: 60px;
     text-align: center;
     flex-shrink: 0;
 }
 
 .reason-text {
-    font-size: 1.1em;
+    font-size: 1.25em;
     color: var(--white-dim);
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 /* ===== OBJECTIVES ===== */
 .obj-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
     flex: 1;
 }
 
 .obj-card {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px;
+    border-radius: 16px;
+    padding: 48px 56px;
     position: relative;
     overflow: hidden;
 }
@@ -341,30 +352,34 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 4px;
     background: linear-gradient(90deg, var(--accent), var(--blue));
 }
 
 .obj-card h3 {
     font-family: var(--font-display);
-    font-size: 1.1em;
-    font-weight: 700;
+    font-size: 1.4em;
+    font-weight: 800;
     color: var(--white);
-    margin-bottom: 14px;
-    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
 .obj-card p, .obj-card li {
-    font-size: 1em;
+    font-size: 1.15em;
     color: var(--white-dim);
-    line-height: 1.6;
+    line-height: 1.8;
+}
+
+.obj-card ul {
+    margin-top: 16px;
 }
 
 .obj-card ul li {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 6px;
+    gap: 16px;
+    margin-bottom: 14px;
 }
 
 .obj-card ul li::before {
@@ -372,52 +387,55 @@
     color: var(--accent);
     font-weight: 700;
     flex-shrink: 0;
-    margin-top: 1px;
+    margin-top: 4px;
+    font-size: 1.2em;
 }
 
 /* ===== SCOPE GRID ===== */
 .scope-grid-styled {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    flex: 1;
+    gap: 32px;
+    align-items: stretch;
 }
 
 .scope-card {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px 24px;
+    border-radius: 16px;
+    padding: 44px 36px;
+    display: flex;
+    flex-direction: column;
 }
 
 .scope-card-icon {
-    font-size: 2.5em;
-    margin-bottom: 16px;
+    font-size: 3.2em;
+    margin-bottom: 20px;
 }
 
 .scope-card h3 {
     font-family: var(--font-display);
-    font-size: 1.1em;
-    font-weight: 700;
+    font-size: 1.25em;
+    font-weight: 800;
     color: var(--white);
-    margin-bottom: 14px;
-    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
 .scope-card li {
-    font-size: 0.95em;
+    font-size: 1.05em;
     color: var(--white-dim);
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .scope-card li::before {
     content: '▸';
     color: var(--teal);
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .scope-card li:last-child {
@@ -487,42 +505,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    flex: 1;
+    gap: 12px;
     justify-content: center;
 }
 
 .arch-layer {
     width: 100%;
-    border-radius: 10px;
-    padding: 12px 20px;
+    border-radius: 12px;
+    padding: 20px 32px;
     text-align: center;
-    border: 1px solid;
+    border: 2px solid;
     position: relative;
 }
 
 .arch-layer.frontend {
     background: rgba(59,130,246,0.08);
-    border-color: rgba(59,130,246,0.3);
+    border-color: rgba(59,130,246,0.4);
 }
 
 .arch-layer.gateway {
     background: rgba(255,95,31,0.12);
-    border-color: rgba(255,95,31,0.4);
-    border-width: 2px;
+    border-color: rgba(255,95,31,0.5);
+    border-width: 3px;
 }
 
 .arch-layer.database {
     background: rgba(20,184,166,0.08);
-    border-color: rgba(20,184,166,0.3);
+    border-color: rgba(20,184,166,0.4);
 }
 
 .arch-layer h3 {
     font-family: var(--font-mono);
-    font-size: 0.7em;
+    font-size: 1em;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    margin-bottom: 3px;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
 }
 
 .arch-layer.frontend h3 {
@@ -538,13 +555,13 @@
 }
 
 .arch-layer p {
-    font-size: 0.6em;
+    font-size: 0.9em;
     color: var(--white-dim);
 }
 
 .arch-services {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     width: 100%;
     justify-content: center;
 }
@@ -553,29 +570,29 @@
     flex: 1;
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-top: 2px solid var(--accent);
-    border-radius: 8px;
-    padding: 10px 6px;
+    border-top: 3px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 10px;
     text-align: center;
 }
 
 .arch-service-box .sname {
     font-family: var(--font-mono);
-    font-size: 0.55em;
+    font-size: 0.8em;
     color: var(--white);
     font-weight: 700;
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .arch-service-box .sport {
     font-family: var(--font-mono);
-    font-size: 0.5em;
+    font-size: 0.75em;
     color: var(--accent);
 }
 
 .arch-arrow {
-    font-size: 1.2em;
+    font-size: 1.8em;
     color: var(--accent);
     line-height: 1;
     opacity: 0.7;
@@ -892,27 +909,27 @@
 .test-card {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 26px;
+    border-radius: 16px;
+    padding: 40px 36px;
 }
 
 .test-card h3 {
     font-family: var(--font-display);
-    font-size: 1.05em;
-    font-weight: 700;
+    font-size: 1.3em;
+    font-weight: 800;
     color: var(--white);
-    margin-bottom: 18px;
-    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
 .test-card li {
-    font-size: 0.9em;
+    font-size: 1.05em;
     color: var(--white-dim);
-    padding: 10px 0;
+    padding: 14px 0;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
 }
 
 .test-card li::before {
@@ -929,39 +946,38 @@
 /* ===== ACHIEVEMENTS ===== */
 .achieve-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 14px;
-    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .achieve-item {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 18px;
+    border-radius: 14px;
+    padding: 32px 28px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 20px;
 }
 
 .achieve-check {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: rgba(20,184,166,0.15);
-    border: 2px solid var(--teal);
+    border: 3px solid var(--teal);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1em;
+    font-size: 1.3em;
     flex-shrink: 0;
 }
 
 .achieve-item p {
-    font-size: 0.95em;
+    font-size: 1.1em;
     color: var(--white-dim);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* ===== FUTURE WORK ===== */
