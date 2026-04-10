@@ -1,0 +1,21 @@
+# Netlify configuration file
+
+[build]
+  # Không cần build command vì đây là static HTML
+  publish = "."
+  
+[build.environment]
+  # Không cần environment variables
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"

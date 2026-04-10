@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nền tảng Giao đồ ăn và Logistics thời gian thực</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Trang bìa -->
+            <section class="title-slide">
+                <h1>Nền tảng Giao đồ ăn và Logistics thời gian thực</h1>
+                <p class="subtitle">Nhóm 5 – Lớp học phần CNTT1190(225)_01</p>
+                <div class="team-members">
+                    <p>Trần Thị Thu Hằng</p>
+                    <p>Lương Gia Hân</p>
+                    <p>Lê Minh Đức - 11235992</p>
+                    <p>Vũ Tuấn Hưng - 11236005</p>
+                </div>
+                <p class="date">Hà Nội, tháng 4 năm 2026</p>
+            </section>
+
+            <!-- Slide 2: Nội dung chính -->
+            <section>
+                <h2>NỘI DUNG CHÍNH</h2>
+                <div class="content-grid">
+                    <div class="content-item">
+                        <div class="number">1</div>
+                        <h3>TỔNG QUAN ĐỀ TÀI</h3>
+                    </div>
+                    <div class="content-item">
+                        <div class="number">2</div>
+                        <h3>CƠ SỞ LÝ THUYẾT</h3>
+                    </div>
+                    <div class="content-item">
+                        <div class="number">3</div>
+                        <h3>PHÂN TÍCH YÊU CẦU</h3>
+                    </div>
+                    <div class="content-item">
+                        <div class="number">4</div>
+                        <h3>THIẾT KẾ HỆ THỐNG</h3>
+                    </div>
+                    <div class="content-item">
+                        <div class="number">5</div>
+                        <h3>CÀI ĐẶT & TRIỂN KHAI</h3>
+                    </div>
+                    <div class="content-item">
+                        <div class="number">6</div>
+                        <h3>KIỂM THỬ & ĐÁNH GIÁ</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Lý do chọn đề tài -->
+            <section>
+                <h2>LÝ DO CHỌN ĐỀ TÀI</h2>
+                <ul class="reason-list">
+                    <li>📱 Nhu cầu đặt món trực tuyến ngày càng tăng cao</li>
+                    <li>⏱️ Yêu cầu theo dõi đơn hàng theo thời gian thực</li>
+                    <li>💳 Hỗ trợ thanh toán điện tử an toàn</li>
+                    <li>🏗️ Mô hình nguyên khối gặp khó khăn khi mở rộng</li>
+                    <li>🎯 Áp dụng kiến trúc SOA vào bài toán thực tế</li>
+                    <li>💡 Rèn luyện kỹ năng phân tích và thiết kế hệ thống</li>
+                </ul>
+            </section>
+
+            <!-- Slide 4: Mục tiêu đề tài -->
+            <section>
+                <h2>MỤC TIÊU ĐỀ TÀI</h2>
+                <div class="objectives">
+                    <div class="objective-item">
+                        <h3>🎯 Mục tiêu tổng quát</h3>
+                        <p>Xây dựng hệ thống giao đồ ăn trực tuyến theo kiến trúc SOA, tăng tính mô-đun, dễ bảo trì và mở rộng</p>
+                    </div>
+                    <div class="objective-item">
+                        <h3>📋 Mục tiêu cụ thể</h3>
+                        <ul>
+                            <li>Xây dựng đầy đủ chức năng giao đồ ăn</li>
+                            <li>Phân tách thành các dịch vụ độc lập</li>
+                            <li>Xây dựng lớp tích hợp trung tâm (ESB)</li>
+                            <li>Triển khai tính năng thời gian thực</li>
+                            <li>Tích hợp dịch vụ bên thứ ba</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Phạm vi đề tài -->
+            <section>
+                <h2>PHẠM VI ĐỀ TÀI</h2>
+                <div class="scope-grid">
+                    <div class="scope-item">
+                        <h3>👥 Người dùng</h3>
+                        <ul>
+                            <li>Khách hàng</li>
+                            <li>Quản trị viên</li>
+                            <li>Người giao hàng</li>
+                        </ul>
+                    </div>
+                    <div class="scope-item">
+                        <h3>⚙️ Công nghệ</h3>
+                        <ul>
+                            <li>Backend: FastAPI</li>
+                            <li>Frontend: HTML/CSS/JS</li>
+                            <li>Database: SQLite</li>
+                            <li>Deploy: Docker Compose</li>
+                        </ul>
+                    </div>
+                    <div class="scope-item">
+                        <h3>🔌 Tích hợp</h3>
+                        <ul>
+                            <li>Goong Maps API</li>
+                            <li>SePay Payment</li>
+                            <li>Firebase Realtime</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Kiến trúc SOA -->
+            <section>
+                <h2>KIẾN TRÚC SOA</h2>
+                <div class="architecture-content">
+                    <p class="definition">SOA (Service-Oriented Architecture) là kiến trúc trong đó hệ thống được chia thành nhiều dịch vụ độc lập</p>
+                    <div class="features">
+                        <h3>Đặc điểm chính:</h3>
+                        <ul>
+                            <li>✅ Tính mô-đun và tái sử dụng cao</li>
+                            <li>✅ Các dịch vụ phân tách rõ ràng theo chức năng</li>
+                            <li>✅ Giao tiếp qua giao diện công khai (API)</li>
+                            <li>✅ Hỗ trợ tương tác đa nền tảng</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 7: Kiến trúc tổng thể -->
+            <section>
+                <h2>KIẾN TRÚC TỔNG THỂ HỆ THỐNG</h2>
+                <div class="system-architecture">
+                    <div class="layer">
+                        <h3>Frontend Layer</h3>
+                        <p>Customer | Admin | Shipper</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="layer highlight">
+                        <h3>Integration Service (API Gateway/ESB)</h3>
+                        <p>Port 8000</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="services-layer">
+                        <div class="service">User<br>8001</div>
+                        <div class="service">Restaurant<br>8002</div>
+                        <div class="service">Order<br>8003</div>
+                        <div class="service">Delivery<br>8004</div>
+                        <div class="service">Payment<br>8005</div>
+                        <div class="service">Review<br>8006</div>
+                        <div class="service">Notification<br>8007</div>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="layer">
+                        <h3>Database Layer</h3>
+                        <p>SQLite per service + Redis Cache</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 8: Các Service -->
+            <section>
+                <h2>CÁC MICROSERVICES</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>👤 User Service</h3>
+                        <p>Quản lý người dùng, đăng ký, đăng nhập, JWT</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🍽️ Restaurant Service</h3>
+                        <p>Quản lý nhà hàng, menu, danh mục món ăn</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>📦 Order Service</h3>
+                        <p>Xử lý đơn hàng, quản lý trạng thái</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🚚 Delivery Service</h3>
+                        <p>Điều phối shipper, tracking realtime</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>💳 Payment Service</h3>
+                        <p>Xử lý thanh toán, webhook</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>⭐ Review Service</h3>
+                        <p>Đánh giá nhà hàng, tính rating</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🔔 Notification Service</h3>
+                        <p>Gửi thông báo cho người dùng</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🔗 Integration Service</h3>
+                        <p>API Gateway, tích hợp bên thứ ba</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 9: Luồng tạo đơn hàng -->
+            <section>
+                <h2>LUỒNG TẠO ĐƠN HÀNG</h2>
+                <div class="flow-diagram">
+                    <div class="flow-step">1. Customer chọn món và tạo đơn</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">2. Order Service tạo đơn hàng</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">3. Payment Service tạo thông tin thanh toán</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">4. Customer thanh toán (SePay)</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">5. Webhook cập nhật trạng thái</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">6. Đơn hàng được xác nhận</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">7. Notification gửi thông báo</div>
+                </div>
+            </section>
+
+            <!-- Slide 10: Luồng giao hàng -->
+            <section>
+                <h2>LUỒNG GIAO HÀNG</h2>
+                <div class="delivery-flow">
+                    <div class="flow-step">1. Delivery Service phân công shipper</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">2. Shipper nhận đơn (ASSIGNED)</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">3. Shipper lấy hàng (PICKING_UP)</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">4. Shipper giao hàng (DELIVERING)</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">5. Cập nhật vị trí realtime (Firebase)</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">6. Customer theo dõi trên bản đồ</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">7. Giao hàng thành công (DELIVERED)</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-step">8. Customer đánh giá (Review Service)</div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Cơ sở dữ liệu -->
+            <section>
+                <h2>THIẾT KẾ CƠ SỞ DỮ LIỆU</h2>
+                <div class="database-info">
+                    <h3>Database per Service Pattern</h3>
+                    <table class="db-table">
+                        <tr>
+                            <th>Service</th>
+                            <th>Số bảng</th>
+                            <th>Bảng chính</th>
+                        </tr>
+                        <tr>
+                            <td>User Service</td>
+                            <td>1</td>
+                            <td>users</td>
+                        </tr>
+                        <tr>
+                            <td>Restaurant Service</td>
+                            <td>3</td>
+                            <td>restaurants, categories, menu_items</td>
+                        </tr>
+                        <tr>
+                            <td>Order Service</td>
+                            <td>2</td>
+                            <td>orders, order_items</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Service</td>
+                            <td>3</td>
+                            <td>deliveries, shipper_locations, location_history</td>
+                        </tr>
+                        <tr>
+                            <td>Payment Service</td>
+                            <td>1</td>
+                            <td>payments</td>
+                        </tr>
+                        <tr>
+                            <td>Review Service</td>
+                            <td>1</td>
+                            <td>reviews</td>
+                        </tr>
+                        <tr>
+                            <td>Notification Service</td>
+                            <td>1</td>
+                            <td>notifications</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Slide 12: Tích hợp bên thứ ba -->
+            <section>
+                <h2>TÍCH HỢP DỊCH VỤ BÊN THỨ BA</h2>
+                <div class="integration-grid">
+                    <div class="integration-item">
+                        <h3>🗺️ Goong Maps API</h3>
+                        <ul>
+                            <li>Geocoding (địa chỉ → tọa độ)</li>
+                            <li>Tính khoảng cách</li>
+                            <li>Hiển thị bản đồ</li>
+                            <li>Tuyến đường giao hàng</li>
+                        </ul>
+                    </div>
+                    <div class="integration-item">
+                        <h3>💰 SePay Payment</h3>
+                        <ul>
+                            <li>Webhook thanh toán</li>
+                            <li>Xử lý trạng thái</li>
+                            <li>Cập nhật đơn hàng</li>
+                            <li>Hỗ trợ COD</li>
+                        </ul>
+                    </div>
+                    <div class="integration-item">
+                        <h3>🔥 Firebase Realtime</h3>
+                        <ul>
+                            <li>Đồng bộ vị trí shipper</li>
+                            <li>Cập nhật trạng thái đơn</li>
+                            <li>SSE cho tracking</li>
+                            <li>Live dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Công nghệ sử dụng -->
+            <section>
+                <h2>CÔNG NGHỆ SỬ DỤNG</h2>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>FastAPI (Python)</li>
+                            <li>SQLite</li>
+                            <li>Redis</li>
+                            <li>JWT Authentication</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>DevOps</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Docker Compose</li>
+                            <li>Nginx</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>External Services</h3>
+                        <ul>
+                            <li>Goong Maps</li>
+                            <li>SePay</li>
+                            <li>Firebase</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 14: Giao diện hệ thống -->
+            <section>
+                <h2>GIAO DIỆN HỆ THỐNG</h2>
+                <div class="ui-showcase">
+                    <div class="ui-item">
+                        <h3>👤 Customer Interface</h3>
+                        <ul>
+                            <li>Trang chủ - danh sách nhà hàng</li>
+                            <li>Chi tiết nhà hàng & menu</li>
+                            <li>Giỏ hàng & thanh toán</li>
+                            <li>Theo dõi đơn hàng realtime</li>
+                            <li>Đánh giá sau khi nhận hàng</li>
+                        </ul>
+                    </div>
+                    <div class="ui-item">
+                        <h3>⚙️ Admin Dashboard</h3>
+                        <ul>
+                            <li>Thống kê tổng quan</li>
+                            <li>Quản lý nhà hàng & menu</li>
+                            <li>Quản lý đơn hàng</li>
+                            <li>Quản lý người dùng</li>
+                            <li>Báo cáo doanh thu</li>
+                        </ul>
+                    </div>
+                    <div class="ui-item">
+                        <h3>🚚 Shipper Interface</h3>
+                        <ul>
+                            <li>Danh sách đơn được gán</li>
+                            <li>Chi tiết đơn hàng</li>
+                            <li>Cập nhật trạng thái</li>
+                            <li>Chia sẻ vị trí</li>
+                            <li>Lịch sử giao hàng</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 15: Kiểm thử -->
+            <section>
+                <h2>KIỂM THỬ HỆ THỐNG</h2>
+                <div class="testing-content">
+                    <div class="test-type">
+                        <h3>🧪 Phương pháp kiểm thử</h3>
+                        <ul>
+                            <li>Kiểm thử chức năng (Unit Test)</li>
+                            <li>Kiểm thử tích hợp (Integration Test)</li>
+                            <li>Kiểm thử end-to-end (E2E Test)</li>
+                            <li>Kiểm thử thủ công giao diện</li>
+                        </ul>
+                    </div>
+                    <div class="test-scenarios">
+                        <h3>📋 Kịch bản kiểm thử chính</h3>
+                        <ul>
+                            <li>✅ Đăng ký/đăng nhập người dùng</li>
+                            <li>✅ Tạo đơn hàng và thanh toán</li>
+                            <li>✅ Webhook thanh toán</li>
+                            <li>✅ Gán shipper và tracking</li>
+                            <li>✅ Cập nhật trạng thái realtime</li>
+                            <li>✅ Đánh giá sau khi hoàn tất</li>
+                            <li>✅ Phân quyền người dùng</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 16: Kết quả đạt được -->
+            <section>
+                <h2>KẾT QUẢ ĐẠT ĐƯỢC</h2>
+                <div class="achievements">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">✅</div>
+                        <p>Xây dựng thành công 8 microservices độc lập</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">✅</div>
+                        <p>Triển khai kiến trúc SOA/ESB hoàn chỉnh</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">✅</div>
+                        <p>Tích hợp thành công dịch vụ bên thứ ba</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">✅</div>
+                        <p>Tracking realtime với Firebase</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">✅</div>
+                        <p>Giao diện đầy đủ cho 3 vai trò</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">✅</div>
+                        <p>Deploy thành công với Docker Compose</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 17: Hướng phát triển -->
+            <section>
+                <h2>HƯỚNG PHÁT TRIỂN</h2>
+                <div class="future-work">
+                    <div class="future-item">
+                        <h3>🗄️ Cơ sở dữ liệu</h3>
+                        <p>Chuyển từ SQLite sang PostgreSQL/MySQL</p>
+                    </div>
+                    <div class="future-item">
+                        <h3>📨 Message Broker</h3>
+                        <p>Tích hợp Kafka/RabbitMQ cho xử lý bất đồng bộ</p>
+                    </div>
+                    <div class="future-item">
+                        <h3>📱 Mobile App</h3>
+                        <p>Phát triển ứng dụng Android/iOS native</p>
+                    </div>
+                    <div class="future-item">
+                        <h3>☁️ Cloud Deployment</h3>
+                        <p>Triển khai lên AWS/GCP/Azure</p>
+                    </div>
+                    <div class="future-item">
+                        <h3>🔒 Bảo mật</h3>
+                        <p>Tăng cường bảo mật API và phân quyền</p>
+                    </div>
+                    <div class="future-item">
+                        <h3>📊 Monitoring</h3>
+                        <p>Logging tập trung, Prometheus, Grafana</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 18: Kết luận -->
+            <section>
+                <h2>KẾT LUẬN</h2>
+                <div class="conclusion">
+                    <p class="highlight">Đề tài đã xây dựng thành công một hệ thống giao đồ ăn trực tuyến hoàn chỉnh theo kiến trúc SOA</p>
+                    <div class="conclusion-points">
+                        <div class="point">
+                            <h3>🎯 Đạt được mục tiêu</h3>
+                            <p>Phân tách hệ thống thành các service độc lập, dễ bảo trì và mở rộng</p>
+                        </div>
+                        <div class="point">
+                            <h3>💡 Kiến thức thu được</h3>
+                            <p>Nắm vững kiến trúc SOA, microservices, tích hợp dịch vụ và realtime tracking</p>
+                        </div>
+                        <div class="point">
+                            <h3>🚀 Ý nghĩa thực tiễn</h3>
+                            <p>Mô hình tham khảo cho việc phát triển hệ thống hướng dịch vụ trong thực tế</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 19: Q&A -->
+            <section class="qa-slide">
+                <h1>CẢM ƠN QUÝ THẦY CÔ ĐÃ LẮNG NGHE!</h1>
+                <h2>Q & A</h2>
+                <p class="qa-text">Nhóm sẵn sàng trả lời câu hỏi</p>
+                <div class="contact-info">
+                    <p>📧 Email: [email liên hệ]</p>
+                    <p>🔗 GitHub: [link repository]</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            center: true,
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
+        });
+    </script>
+</body>
+</html>
