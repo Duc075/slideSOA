@@ -53,13 +53,13 @@
 }
 
 .reveal h2 {
-    font-size: 1.45em;
+    font-size: 2em;
     font-weight: 800;
     letter-spacing: 0.06em;
     color: var(--white);
-    margin-bottom: 0.6em;
-    padding-bottom: 0.35em;
-    border-bottom: 2px solid var(--accent);
+    margin-bottom: 0.8em;
+    padding-bottom: 0.4em;
+    border-bottom: 3px solid var(--accent);
     display: inline-block;
 }
 
@@ -85,7 +85,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 52px 68px 40px;
+    padding: 60px 80px 50px;
     box-sizing: border-box;
     background: var(--navy);
     position: relative;
@@ -268,7 +268,7 @@
 
 .menu-number {
     font-family: var(--font-mono);
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 700;
     color: var(--accent);
     opacity: 0.5;
@@ -278,7 +278,7 @@
 
 .menu-item h3 {
     font-family: var(--font-display);
-    font-size: 0.75em;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: 0.06em;
     color: var(--white);
@@ -289,30 +289,31 @@
 .reason-list-styled {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 18px;
     flex: 1;
+    justify-content: center;
 }
 
 .reason-item {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 24px;
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 10px;
-    padding: 14px 22px;
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px 30px;
 }
 
 .reason-icon {
-    font-size: 1.4em;
-    width: 36px;
+    font-size: 2em;
+    width: 48px;
     text-align: center;
     flex-shrink: 0;
 }
 
 .reason-text {
-    font-size: 0.8em;
+    font-size: 1.1em;
     color: var(--white-dim);
     line-height: 1.4;
 }
@@ -346,7 +347,7 @@
 
 .obj-card h3 {
     font-family: var(--font-display);
-    font-size: 0.8em;
+    font-size: 1.1em;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 14px;
@@ -354,7 +355,7 @@
 }
 
 .obj-card p, .obj-card li {
-    font-size: 0.72em;
+    font-size: 1em;
     color: var(--white-dim);
     line-height: 1.6;
 }
@@ -390,13 +391,13 @@
 }
 
 .scope-card-icon {
-    font-size: 2em;
-    margin-bottom: 12px;
+    font-size: 2.5em;
+    margin-bottom: 16px;
 }
 
 .scope-card h3 {
     font-family: var(--font-display);
-    font-size: 0.78em;
+    font-size: 1.1em;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 14px;
@@ -404,13 +405,13 @@
 }
 
 .scope-card li {
-    font-size: 0.68em;
+    font-size: 0.95em;
     color: var(--white-dim);
-    padding: 5px 0;
+    padding: 8px 0;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
 }
 
 .scope-card li::before {
@@ -427,18 +428,19 @@
 .soa-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
     flex: 1;
+    justify-content: center;
 }
 
 .soa-definition {
     background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(20,184,166,0.08));
     border: 1px solid rgba(59,130,246,0.25);
-    border-radius: 14px;
-    padding: 28px 32px;
-    font-size: 0.85em;
+    border-radius: 16px;
+    padding: 40px 48px;
+    font-size: 1.2em;
     color: var(--white);
-    line-height: 1.7;
+    line-height: 1.8;
     font-weight: 400;
     font-style: italic;
 }
@@ -446,36 +448,37 @@
 .soa-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 20px;
 }
 
 .soa-feature {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 18px;
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 18px;
+    border-radius: 12px;
+    padding: 22px 26px;
 }
 
 .soa-check {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(20,184,166,0.15);
-    border: 1px solid var(--teal);
+    border: 2px solid var(--teal);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75em;
+    font-size: 0.9em;
     color: var(--teal);
     flex-shrink: 0;
 }
 
 .soa-feature p {
-    font-size: 0.72em;
+    font-size: 1em;
     color: var(--white-dim);
+    line-height: 1.5;
 }
 
 
@@ -583,20 +586,20 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 14px;
+    gap: 20px;
     flex: 1;
 }
 
 .svc-card {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 16px;
+    border-radius: 14px;
+    padding: 26px 22px;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .svc-card::after {
@@ -605,26 +608,26 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 2px;
+    height: 3px;
     background: linear-gradient(90deg, var(--accent), var(--blue));
 }
 
 .svc-icon {
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .svc-card h3 {
     font-family: var(--font-display);
-    font-size: 0.65em;
+    font-size: 0.85em;
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--white);
 }
 
 .svc-card p {
-    font-size: 0.6em;
+    font-size: 0.8em;
     color: var(--white-dim);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /* ===== FLOW DIAGRAMS ===== */
@@ -632,7 +635,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
     flex: 1;
     justify-content: center;
 }
@@ -641,37 +644,37 @@
     width: 85%;
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 0.7em;
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 28px;
+    font-size: 0.95em;
     color: var(--white-dim);
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 20px;
 }
 
 .flow-step-num {
     font-family: var(--font-mono);
-    font-size: 0.9em;
+    font-size: 1.1em;
     font-weight: 700;
     color: var(--accent);
     flex-shrink: 0;
-    width: 20px;
+    width: 28px;
 }
 
 .flow-arrow-styled {
     color: var(--accent);
-    font-size: 0.9em;
-    opacity: 0.5;
+    font-size: 1.2em;
+    opacity: 0.6;
 }
 
 /* ===== DB TABLE ===== */
 .db-table-styled {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.72em;
-    flex: 1;
+    font-size: 1em;
+    margin-top: 20px;
 }
 
 .db-table-styled thead tr {
@@ -681,19 +684,19 @@
 .db-table-styled th {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 0.85em;
+    font-size: 1em;
     letter-spacing: 0.08em;
     color: white;
-    padding: 12px 18px;
+    padding: 18px 24px;
     text-align: left;
 }
 
 .db-table-styled td {
-    padding: 10px 18px;
+    padding: 16px 24px;
     border-bottom: 1px solid var(--border);
     color: var(--white-dim);
     font-family: var(--font-mono);
-    font-size: 0.9em;
+    font-size: 0.95em;
 }
 
 .db-table-styled tbody tr:nth-child(even) {
@@ -741,16 +744,16 @@
 
 .int-card h3 {
     font-family: var(--font-display);
-    font-size: 0.72em;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--white);
 }
 
 .int-card li {
-    font-size: 0.65em;
+    font-size: 0.9em;
     color: var(--white-dim);
-    padding: 5px 0;
+    padding: 8px 0;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -797,7 +800,7 @@
 
 .tech-cat h3 {
     font-family: var(--font-display);
-    font-size: 0.72em;
+    font-size: 1em;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--accent);
@@ -806,9 +809,9 @@
 
 .tech-cat li {
     font-family: var(--font-mono);
-    font-size: 0.62em;
+    font-size: 0.85em;
     color: var(--white-dim);
-    padding: 6px 0;
+    padding: 8px 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -848,16 +851,16 @@
 
 .ui-card h3 {
     font-family: var(--font-display);
-    font-size: 0.7em;
+    font-size: 0.95em;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--white);
 }
 
 .ui-card li {
-    font-size: 0.65em;
+    font-size: 0.85em;
     color: var(--white-dim);
-    padding: 5px 0;
+    padding: 8px 0;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -895,17 +898,17 @@
 
 .test-card h3 {
     font-family: var(--font-display);
-    font-size: 0.78em;
+    font-size: 1.05em;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 14px;
+    margin-bottom: 18px;
     letter-spacing: 0.04em;
 }
 
 .test-card li {
-    font-size: 0.68em;
+    font-size: 0.9em;
     color: var(--white-dim);
-    padding: 7px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -956,9 +959,9 @@
 }
 
 .achieve-item p {
-    font-size: 0.7em;
+    font-size: 0.95em;
     color: var(--white-dim);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /* ===== FUTURE WORK ===== */
@@ -982,16 +985,16 @@
 
 .future-card h3 {
     font-family: var(--font-display);
-    font-size: 0.7em;
+    font-size: 0.95em;
     font-weight: 700;
     color: var(--white);
     letter-spacing: 0.04em;
 }
 
 .future-card p {
-    font-size: 0.65em;
+    font-size: 0.85em;
     color: var(--white-dim);
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 /* ===== CONCLUSION ===== */
@@ -1005,11 +1008,11 @@
 .conclusion-hero {
     background: linear-gradient(135deg, rgba(255,95,31,0.12), rgba(59,130,246,0.08));
     border: 1px solid rgba(255,95,31,0.25);
-    border-radius: 14px;
-    padding: 24px 30px;
-    font-size: 0.85em;
+    border-radius: 16px;
+    padding: 32px 40px;
+    font-size: 1.15em;
     color: var(--white);
-    line-height: 1.6;
+    line-height: 1.7;
     font-weight: 500;
     text-align: center;
 }
@@ -1017,32 +1020,32 @@
 .conclusion-pts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    gap: 20px;
     flex: 1;
 }
 
 .conclusion-pt {
     background: var(--navy-light);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 16px;
+    border-radius: 14px;
+    padding: 28px 24px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .conclusion-pt h3 {
     font-family: var(--font-display);
-    font-size: 0.72em;
+    font-size: 0.95em;
     font-weight: 700;
     color: var(--white);
     letter-spacing: 0.04em;
 }
 
 .conclusion-pt p {
-    font-size: 0.65em;
+    font-size: 0.85em;
     color: var(--white-dim);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* ===== QA SLIDE ===== */
