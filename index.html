@@ -6,6 +6,9 @@
     <title>Nền tảng Giao đồ ăn và Logistics thời gian thực</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -543,15 +546,28 @@
     <script>
         Reveal.initialize({
             hash: true,
-            slideNumber: true,
-            transition: 'slide',
-            backgroundTransition: 'fade',
+            slideNumber: false,
+            controls: false,
+            progress: true,
             center: true,
+            transition: 'convex',
+            transitionSpeed: 'default',
+            backgroundTransition: 'zoom',
             width: 1280,
             height: 720,
             margin: 0.04,
             minScale: 0.2,
-            maxScale: 2.0
+            maxScale: 2.0,
+            autoPlayMedia: true,
+            preloadIframes: true,
+            parallaxBackgroundImage: '',
+            parallaxBackgroundSize: '',
+            keyboard: {
+                39: 'next',
+                37: 'prev',
+                38: 'prev',
+                40: 'next'
+            }
         });
     </script>
 </body>
