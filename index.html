@@ -3,185 +3,732 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slide SOA - Cải tiến</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* CSS MINI - CHỈ CẦN NÀY ĐỂ CHẠY NGAY */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-            color: white; 
-            overflow: hidden; 
-            height: 100vh;
-        }
-        
-        .slide-container {
-            position: relative; width: 100vw; height: 100vh;
-        }
-        
-        .slide {
-            position: absolute; width: 100%; height: 100%;
-            opacity: 0; transform: translateX(100%);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            padding: 4rem; display: flex; align-items: center;
-            justify-content: center;
-        }
-        
-        .slide.active {
-            opacity: 1; transform: translateX(0);
-        }
-        
-        .slide-content {
-            max-width: 1200px; width: 100%; font-size: 1.8rem;
-        }
-        
-        .slide-content h1, .slide-content h2 {
-            font-size: 4rem; text-align: center; margin-bottom: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        
-        .slide-content h3 { font-size: 2.5rem; margin: 1.5rem 0; }
-        .slide-content p, .slide-content li { 
-            font-size: 1.6rem; line-height: 1.6; color: #a1a1aa;
-        }
-        
-        .nav-dots {
-            position: fixed; top: 50%; right: 3rem; transform: translateY(-50%);
-            display: flex; flex-direction: column; gap: 1rem;
-        }
-        
-        .nav-dot {
-            width: 12px; height: 12px; border-radius: 50%;
-            background: rgba(255,255,255,0.3); cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-dot:hover, .nav-dot.active {
-            background: #667eea; transform: scale(1.5);
-        }
-        
-        .nav-arrow {
-            position: fixed; top: 50%; transform: translateY(-50%);
-            background: rgba(255,255,255,0.2); border: none;
-            width: 50px; height: 50px; border-radius: 50%;
-            color: white; font-size: 1.5rem; cursor: pointer;
-            backdrop-filter: blur(20px);
-        }
-        
-        .prev { left: 3rem; }
-        .next { right: 3rem; }
-        
-        .progress-bar {
-            position: fixed; bottom: 2rem; left: 50%;
-            transform: translateX(-50%); width: 300px; height: 4px;
-            background: rgba(255,255,255,0.2); border-radius: 2px;
-        }
-        
-        .progress-fill {
-            height: 100%; background: linear-gradient(90deg, #667eea, #764ba2);
-            width: 20%; transition: width 0.8s ease; border-radius: 2px;
-        }
-        
-        ul { list-style: none; }
-        li { margin: 1rem 0; font-size: 1.6rem; }
-        
-        @media (max-width: 768px) {
-            .slide { padding: 2rem; }
-            .slide-content h1, .slide-content h2 { font-size: 2.5rem; }
-            .slide-content p, li { font-size: 1.3rem; }
-            .nav-dots { display: none; }
-        }
-    </style>
+    <title>Nền tảng Giao đồ ăn và Logistics thời gian thực</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="slide-container">
-        <!-- 👇 THÊM SỐ DOT = SỐ SLIDE CỦA BẠN -->
-        <div class="nav-dots" id="navDots"></div>
-
-        <!-- SLIDE 1 -->
-        <div class="slide active">
-            <div class="slide-content">
-                <!-- COPY NỘI DUNG SLIDE 1 GỐC VÀO ĐÂY -->
-                <h1>Service-Oriented Architecture</h1>
-                <p>Kiến trúc hướng dịch vụ hiện đại</p>
+<div class="reveal">
+    <div class="slides">
+        
+        <!-- Slide 1: Title -->
+        <section>
+            <div class="title-slide">
+                <div class="title-tag">SOA — Nhóm 5 / CNTT1190(225)_01</div>
+                <h1>Nền tảng Giao đồ ăn &amp; Logistics thời gian thực</h1>
+                <div class="title-divider"></div>
+                <p class="subtitle">SERVICE-ORIENTED ARCHITECTURE PROJECT</p>
+                <div class="team-grid">
+                    <span class="team-chip">Trần Thị Thu Hằng</span>
+                    <span class="team-chip">Lương Gia Hân</span>
+                    <span class="team-chip">Lê Minh Đức · 11235992</span>
+                    <span class="team-chip">Vũ Tuấn Hưng · 11236005</span>
+                </div>
+                <p class="title-date">HÀ NỘI — THÁNG 4, 2026</p>
             </div>
-        </div>
+        </section>
 
-        <!-- SLIDE 2 -->
-        <div class="slide">
-            <div class="slide-content">
-                <!-- COPY NỘI DUNG SLIDE 2 GỐC -->
-                <h2>SOA là gì?</h2>
-                <ul>
-                    <li>🎯 Kiến trúc hướng dịch vụ</li>
-                    <li>🔗 Giao tiếp qua chuẩn</li>
-                    <li>⚙️ Loose Coupling</li>
-                </ul>
+        <!-- Slide 2: Nội dung chính -->
+        <section>
+            <div class="slide-inner">
+                <h2>NỘI DUNG CHÍNH</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-number">01</div>
+                        <h3>TỔNG QUAN ĐỀ TÀI</h3>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-number">02</div>
+                        <h3>CƠ SỞ LÝ THUYẾT</h3>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-number">03</div>
+                        <h3>PHÂN TÍCH YÊU CẦU</h3>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-number">04</div>
+                        <h3>THIẾT KẾ HỆ THỐNG</h3>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-number">05</div>
+                        <h3>CÀI ĐẶT & TRIỂN KHAI</h3>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-number">06</div>
+                        <h3>KIỂM THỬ & ĐÁNH GIÁ</h3>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- 👇 THÊM TẤT CẢ SLIDE KHÁC CỦA BẠN -->
-        <!-- <div class="slide"> ... </div> -->
+        <!-- Slide 3: Lý do chọn đề tài -->
+        <section>
+            <div class="slide-inner">
+                <h2>LÝ DO CHỌN ĐỀ TÀI</h2>
+                <div class="reason-list-styled">
+                    <div class="reason-item">
+                        <div class="reason-icon">📱</div>
+                        <div class="reason-text">Nhu cầu đặt món trực tuyến ngày càng tăng cao</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">⏱️</div>
+                        <div class="reason-text">Yêu cầu theo dõi đơn hàng theo thời gian thực</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">💳</div>
+                        <div class="reason-text">Hỗ trợ thanh toán điện tử an toàn</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">🏗️</div>
+                        <div class="reason-text">Mô hình nguyên khối gặp khó khăn khi mở rộng</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">🎯</div>
+                        <div class="reason-text">Áp dụng kiến trúc SOA vào bài toán thực tế</div>
+                    </div>
+                    <div class="reason-item">
+                        <div class="reason-icon">💡</div>
+                        <div class="reason-text">Rèn luyện kỹ năng phân tích và thiết kế hệ thống</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Mục tiêu đề tài -->
+        <section>
+            <div class="slide-inner">
+                <h2>MỤC TIÊU ĐỀ TÀI</h2>
+                <div class="obj-grid">
+                    <div class="obj-card">
+                        <h3>🎯 MỤC TIÊU TỔNG QUÁT</h3>
+                        <p>Xây dựng hệ thống giao đồ ăn trực tuyến theo kiến trúc SOA, tăng tính mô-đun, dễ bảo trì và mở rộng</p>
+                    </div>
+                    <div class="obj-card">
+                        <h3>📋 MỤC TIÊU CỤ THỂ</h3>
+                        <ul>
+                            <li>Xây dựng đầy đủ chức năng giao đồ ăn</li>
+                            <li>Phân tách thành các dịch vụ độc lập</li>
+                            <li>Xây dựng lớp tích hợp trung tâm (ESB)</li>
+                            <li>Triển khai tính năng thời gian thực</li>
+                            <li>Tích hợp dịch vụ bên thứ ba</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Phạm vi đề tài -->
+        <section>
+            <div class="slide-inner">
+                <h2>PHẠM VI ĐỀ TÀI</h2>
+                <div class="scope-grid-styled">
+                    <div class="scope-card">
+                        <div class="scope-card-icon">👥</div>
+                        <h3>NGƯỜI DÙNG</h3>
+                        <ul>
+                            <li>Khách hàng</li>
+                            <li>Quản trị viên</li>
+                            <li>Người giao hàng</li>
+                        </ul>
+                    </div>
+                    <div class="scope-card">
+                        <div class="scope-card-icon">⚙️</div>
+                        <h3>CÔNG NGHỆ</h3>
+                        <ul>
+                            <li>Backend: FastAPI</li>
+                            <li>Frontend: HTML/CSS/JS</li>
+                            <li>Database: SQLite</li>
+                            <li>Deploy: Docker Compose</li>
+                        </ul>
+                    </div>
+                    <div class="scope-card">
+                        <div class="scope-card-icon">🔌</div>
+                        <h3>TÍCH HỢP</h3>
+                        <ul>
+                            <li>Goong Maps API</li>
+                            <li>SePay Payment</li>
+                            <li>Firebase Realtime</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Kiến trúc SOA -->
+        <section>
+            <div class="slide-inner">
+                <h2>KIẾN TRÚC SOA</h2>
+                <div class="soa-content">
+                    <div class="soa-definition">
+                        SOA (Service-Oriented Architecture) là kiến trúc trong đó hệ thống được chia thành nhiều dịch vụ độc lập
+                    </div>
+                    <div class="soa-features">
+                        <div class="soa-feature">
+                            <div class="soa-check">✓</div>
+                            <p>Tính mô-đun và tái sử dụng cao</p>
+                        </div>
+                        <div class="soa-feature">
+                            <div class="soa-check">✓</div>
+                            <p>Các dịch vụ phân tách rõ ràng theo chức năng</p>
+                        </div>
+                        <div class="soa-feature">
+                            <div class="soa-check">✓</div>
+                            <p>Giao tiếp qua giao diện công khai (API)</p>
+                        </div>
+                        <div class="soa-feature">
+                            <div class="soa-check">✓</div>
+                            <p>Hỗ trợ tương tác đa nền tảng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Kiến trúc tổng thể -->
+        <section>
+            <div class="slide-inner">
+                <h2>KIẾN TRÚC TỔNG THỂ HỆ THỐNG</h2>
+                <div class="arch-diagram">
+                    <div class="arch-layer frontend">
+                        <h3>FRONTEND</h3>
+                        <p>HTML / CSS / JavaScript</p>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer gateway">
+                        <h3>INTEGRATION SERVICE (API GATEWAY)</h3>
+                        <p>Port 8000 - Điều phối các service</p>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-services">
+                        <div class="arch-service-box">
+                            <span class="sname">User</span>
+                            <span class="sport">:8001</span>
+                        </div>
+                        <div class="arch-service-box">
+                            <span class="sname">Restaurant</span>
+                            <span class="sport">:8002</span>
+                        </div>
+                        <div class="arch-service-box">
+                            <span class="sname">Order</span>
+                            <span class="sport">:8003</span>
+                        </div>
+                        <div class="arch-service-box">
+                            <span class="sname">Delivery</span>
+                            <span class="sport">:8004</span>
+                        </div>
+                        <div class="arch-service-box">
+                            <span class="sname">Payment</span>
+                            <span class="sport">:8005</span>
+                        </div>
+                        <div class="arch-service-box">
+                            <span class="sname">Review</span>
+                            <span class="sport">:8006</span>
+                        </div>
+                        <div class="arch-service-box">
+                            <span class="sname">Notification</span>
+                            <span class="sport">:8007</span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer database">
+                        <h3>DATABASE LAYER</h3>
+                        <p>SQLite + Redis + Firebase</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Các Service -->
+        <section>
+            <div class="slide-inner">
+                <h2>CÁC MICROSERVICES</h2>
+                <div class="services-grid-styled">
+                    <div class="svc-card">
+                        <div class="svc-icon">👤</div>
+                        <h3>USER SERVICE</h3>
+                        <p>Quản lý người dùng, đăng ký, đăng nhập, JWT</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">🍽️</div>
+                        <h3>RESTAURANT</h3>
+                        <p>Quản lý nhà hàng, menu, danh mục món ăn</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">📦</div>
+                        <h3>ORDER SERVICE</h3>
+                        <p>Xử lý đơn hàng, quản lý trạng thái</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">🚚</div>
+                        <h3>DELIVERY</h3>
+                        <p>Điều phối shipper, tracking realtime</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">💳</div>
+                        <h3>PAYMENT</h3>
+                        <p>Xử lý thanh toán, webhook</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">⭐</div>
+                        <h3>REVIEW SERVICE</h3>
+                        <p>Đánh giá nhà hàng, tính rating</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">🔔</div>
+                        <h3>NOTIFICATION</h3>
+                        <p>Gửi thông báo cho người dùng</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon">🔗</div>
+                        <h3>INTEGRATION</h3>
+                        <p>API Gateway, tích hợp bên thứ ba</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Luồng tạo đơn hàng -->
+        <section>
+            <div class="slide-inner">
+                <h2>LUỒNG TẠO ĐƠN HÀNG</h2>
+                <div class="flow-container">
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">1</div>
+                        <div>Customer chọn món từ menu nhà hàng</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">2</div>
+                        <div>Tạo đơn hàng qua Order Service</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">3</div>
+                        <div>Tạo yêu cầu thanh toán qua Payment Service</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">4</div>
+                        <div>Customer thanh toán qua SePay</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">5</div>
+                        <div>Webhook cập nhật trạng thái thanh toán</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">6</div>
+                        <div>Xác nhận đơn hàng và cập nhật trạng thái</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">7</div>
+                        <div>Gửi thông báo cho customer và restaurant</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">8</div>
+                        <div>Hoàn thành tạo đơn hàng</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Luồng giao hàng -->
+        <section>
+            <div class="slide-inner">
+                <h2>LUỒNG GIAO HÀNG</h2>
+                <div class="flow-container">
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">1</div>
+                        <div>Phân công shipper cho đơn hàng</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">2</div>
+                        <div>Shipper nhận đơn và xác nhận</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">3</div>
+                        <div>Lấy hàng tại nhà hàng</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">4</div>
+                        <div>Bắt đầu giao hàng đến khách</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">5</div>
+                        <div>Cập nhật vị trí realtime qua Firebase</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">6</div>
+                        <div>Customer tracking đơn hàng trên bản đồ</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">7</div>
+                        <div>Giao hàng thành công và xác nhận</div>
+                    </div>
+                    <div class="flow-arrow-styled">↓</div>
+                    <div class="flow-step-styled">
+                        <div class="flow-step-num">8</div>
+                        <div>Customer đánh giá dịch vụ</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Cơ sở dữ liệu -->
+        <section>
+            <div class="slide-inner">
+                <h2>THIẾT KẾ CƠ SỞ DỮ LIỆU</h2>
+                <table class="db-table-styled">
+                    <thead>
+                        <tr>
+                            <th>SERVICE</th>
+                            <th>SỐ BẢNG</th>
+                            <th>BẢNG CHÍNH</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User Service</td>
+                            <td>1</td>
+                            <td>users</td>
+                        </tr>
+                        <tr>
+                            <td>Restaurant Service</td>
+                            <td>3</td>
+                            <td>restaurants, categories, menu_items</td>
+                        </tr>
+                        <tr>
+                            <td>Order Service</td>
+                            <td>2</td>
+                            <td>orders, order_items</td>
+                        </tr>
+                        <tr>
+                            <td>Delivery Service</td>
+                            <td>3</td>
+                            <td>deliveries, shipper_locations, location_history</td>
+                        </tr>
+                        <tr>
+                            <td>Payment Service</td>
+                            <td>1</td>
+                            <td>payments</td>
+                        </tr>
+                        <tr>
+                            <td>Review Service</td>
+                            <td>1</td>
+                            <td>reviews</td>
+                        </tr>
+                        <tr>
+                            <td>Notification Service</td>
+                            <td>1</td>
+                            <td>notifications</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Slide 12: Tích hợp bên thứ ba -->
+        <section>
+            <div class="slide-inner">
+                <h2>TÍCH HỢP DỊCH VỤ BÊN THỨ BA</h2>
+                <div class="integration-grid-styled">
+                    <div class="int-card">
+                        <div class="int-card-header">
+                            <div class="int-icon">🗺️</div>
+                            <h3>GOONG MAPS API</h3>
+                        </div>
+                        <ul>
+                            <li>Geocoding (địa chỉ → tọa độ)</li>
+                            <li>Tính khoảng cách</li>
+                            <li>Hiển thị bản đồ</li>
+                            <li>Tuyến đường giao hàng</li>
+                        </ul>
+                    </div>
+                    <div class="int-card">
+                        <div class="int-card-header">
+                            <div class="int-icon">💰</div>
+                            <h3>SEPAY PAYMENT</h3>
+                        </div>
+                        <ul>
+                            <li>Webhook thanh toán</li>
+                            <li>Xử lý trạng thái</li>
+                            <li>Cập nhật đơn hàng</li>
+                            <li>Hỗ trợ COD</li>
+                        </ul>
+                    </div>
+                    <div class="int-card">
+                        <div class="int-card-header">
+                            <div class="int-icon">🔥</div>
+                            <h3>FIREBASE REALTIME</h3>
+                        </div>
+                        <ul>
+                            <li>Đồng bộ vị trí shipper</li>
+                            <li>Cập nhật trạng thái đơn</li>
+                            <li>SSE cho tracking</li>
+                            <li>Live dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Công nghệ sử dụng -->
+        <section>
+            <div class="slide-inner">
+                <h2>CÔNG NGHỆ SỬ DỤNG</h2>
+                <div class="tech-grid">
+                    <div class="tech-cat">
+                        <h3>BACKEND</h3>
+                        <ul>
+                            <li>FastAPI (Python)</li>
+                            <li>SQLite</li>
+                            <li>Redis</li>
+                            <li>JWT Authentication</li>
+                        </ul>
+                    </div>
+                    <div class="tech-cat">
+                        <h3>FRONTEND</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="tech-cat">
+                        <h3>DEVOPS</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Docker Compose</li>
+                            <li>Nginx</li>
+                        </ul>
+                    </div>
+                    <div class="tech-cat">
+                        <h3>EXTERNAL</h3>
+                        <ul>
+                            <li>Goong Maps</li>
+                            <li>SePay</li>
+                            <li>Firebase</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Giao diện hệ thống -->
+        <section>
+            <div class="slide-inner">
+                <h2>GIAO DIỆN HỆ THỐNG</h2>
+                <div class="ui-grid">
+                    <div class="ui-card">
+                        <div class="ui-card-head">
+                            <div class="ui-card-icon">👤</div>
+                            <h3>CUSTOMER</h3>
+                        </div>
+                        <ul>
+                            <li>Trang chủ - danh sách nhà hàng</li>
+                            <li>Chi tiết nhà hàng & menu</li>
+                            <li>Giỏ hàng & thanh toán</li>
+                            <li>Theo dõi đơn hàng realtime</li>
+                            <li>Đánh giá sau khi nhận hàng</li>
+                        </ul>
+                    </div>
+                    <div class="ui-card">
+                        <div class="ui-card-head">
+                            <div class="ui-card-icon">⚙️</div>
+                            <h3>ADMIN</h3>
+                        </div>
+                        <ul>
+                            <li>Thống kê tổng quan</li>
+                            <li>Quản lý nhà hàng & menu</li>
+                            <li>Quản lý đơn hàng</li>
+                            <li>Quản lý người dùng</li>
+                            <li>Báo cáo doanh thu</li>
+                        </ul>
+                    </div>
+                    <div class="ui-card">
+                        <div class="ui-card-head">
+                            <div class="ui-card-icon">🚚</div>
+                            <h3>SHIPPER</h3>
+                        </div>
+                        <ul>
+                            <li>Danh sách đơn được gán</li>
+                            <li>Chi tiết đơn hàng</li>
+                            <li>Cập nhật trạng thái</li>
+                            <li>Chia sẻ vị trí</li>
+                            <li>Lịch sử giao hàng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Kiểm thử -->
+        <section>
+            <div class="slide-inner">
+                <h2>KIỂM THỬ HỆ THỐNG</h2>
+                <div class="test-grid">
+                    <div class="test-card">
+                        <h3>🧪 PHƯƠNG PHÁP KIỂM THỬ</h3>
+                        <ul>
+                            <li>Kiểm thử chức năng (Unit Test)</li>
+                            <li>Kiểm thử tích hợp (Integration Test)</li>
+                            <li>Kiểm thử end-to-end (E2E Test)</li>
+                            <li>Kiểm thử thủ công giao diện</li>
+                        </ul>
+                    </div>
+                    <div class="test-card">
+                        <h3>📋 KỊCH BẢN KIỂM THỬ</h3>
+                        <ul>
+                            <li>Đăng ký/đăng nhập người dùng</li>
+                            <li>Tạo đơn hàng và thanh toán</li>
+                            <li>Webhook thanh toán</li>
+                            <li>Gán shipper và tracking</li>
+                            <li>Cập nhật trạng thái realtime</li>
+                            <li>Đánh giá sau khi hoàn tất</li>
+                            <li>Phân quyền người dùng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Kết quả đạt được -->
+        <section>
+            <div class="slide-inner">
+                <h2>KẾT QUẢ ĐẠT ĐƯỢC</h2>
+                <div class="achieve-grid">
+                    <div class="achieve-item">
+                        <div class="achieve-check">✓</div>
+                        <p>Xây dựng thành công 8 microservices độc lập</p>
+                    </div>
+                    <div class="achieve-item">
+                        <div class="achieve-check">✓</div>
+                        <p>Triển khai kiến trúc SOA/ESB hoàn chỉnh</p>
+                    </div>
+                    <div class="achieve-item">
+                        <div class="achieve-check">✓</div>
+                        <p>Tích hợp thành công dịch vụ bên thứ ba</p>
+                    </div>
+                    <div class="achieve-item">
+                        <div class="achieve-check">✓</div>
+                        <p>Tracking realtime với Firebase</p>
+                    </div>
+                    <div class="achieve-item">
+                        <div class="achieve-check">✓</div>
+                        <p>Giao diện đầy đủ cho 3 vai trò</p>
+                    </div>
+                    <div class="achieve-item">
+                        <div class="achieve-check">✓</div>
+                        <p>Deploy thành công với Docker Compose</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: Hướng phát triển -->
+        <section>
+            <div class="slide-inner">
+                <h2>HƯỚNG PHÁT TRIỂN</h2>
+                <div class="future-grid">
+                    <div class="future-card">
+                        <h3>🗄️ CƠ SỞ DỮ LIỆU</h3>
+                        <p>Chuyển từ SQLite sang PostgreSQL/MySQL</p>
+                    </div>
+                    <div class="future-card">
+                        <h3>📨 MESSAGE BROKER</h3>
+                        <p>Tích hợp Kafka/RabbitMQ cho xử lý bất đồng bộ</p>
+                    </div>
+                    <div class="future-card">
+                        <h3>📱 MOBILE APP</h3>
+                        <p>Phát triển ứng dụng Android/iOS native</p>
+                    </div>
+                    <div class="future-card">
+                        <h3>☁️ CLOUD DEPLOY</h3>
+                        <p>Triển khai lên AWS/GCP/Azure</p>
+                    </div>
+                    <div class="future-card">
+                        <h3>🔒 BẢO MẬT</h3>
+                        <p>Tăng cường bảo mật API và phân quyền</p>
+                    </div>
+                    <div class="future-card">
+                        <h3>📊 MONITORING</h3>
+                        <p>Logging tập trung, Prometheus, Grafana</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Kết luận -->
+        <section>
+            <div class="slide-inner">
+                <h2>KẾT LUẬN</h2>
+                <div class="conclusion-wrap">
+                    <div class="conclusion-hero">
+                        Đề tài đã xây dựng thành công một hệ thống giao đồ ăn trực tuyến hoàn chỉnh theo kiến trúc SOA
+                    </div>
+                    <div class="conclusion-pts">
+                        <div class="conclusion-pt">
+                            <h3>🎯 ĐẠT ĐƯỢC MỤC TIÊU</h3>
+                            <p>Phân tách hệ thống thành các service độc lập, dễ bảo trì và mở rộng</p>
+                        </div>
+                        <div class="conclusion-pt">
+                            <h3>💡 KIẾN THỨC THU ĐƯỢC</h3>
+                            <p>Nắm vững kiến trúc SOA, microservices, tích hợp dịch vụ và realtime tracking</p>
+                        </div>
+                        <div class="conclusion-pt">
+                            <h3>🚀 Ý NGHĨA THỰC TIỄN</h3>
+                            <p>Mô hình tham khảo cho việc phát triển hệ thống hướng dịch vụ trong thực tế</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Q&A -->
+        <section>
+            <div class="qa-slide-inner">
+                <div class="qa-big">Q&A</div>
+                <h1>CẢM ƠN QUÝ THẦY CÔ ĐÃ LẮNG NGHE!</h1>
+                <div class="qa-label">Q & A</div>
+                <p class="qa-sub">Nhóm sẵn sàng trả lời câu hỏi</p>
+                <div class="qa-contacts">
+                    <div class="qa-contact">📧 Email: [email liên hệ]</div>
+                    <div class="qa-contact">🔗 GitHub: [link repository]</div>
+                </div>
+            </div>
+        </section>
+
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <button class="nav-arrow prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-    <button class="nav-arrow next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
-    <div class="progress-bar"><div class="progress-fill"></div></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
     <script>
-        let currentSlideIndex = 1;
-        let totalSlides = document.querySelectorAll('.slide').length;
-        
-        // Tạo dots tự động
-        const navDots = document.getElementById('navDots');
-        for(let i = 1; i <= totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'nav-dot';
-            dot.onclick = () => currentSlide(i);
-            navDots.appendChild(dot);
-        }
-        document.querySelector('.nav-dot').classList.add('active');
-        
-        function changeSlide(direction) {
-            const slides = document.querySelectorAll('.slide');
-            slides[currentSlideIndex-1].classList.remove('active');
-            
-            currentSlideIndex += direction;
-            if(currentSlideIndex > totalSlides) currentSlideIndex = 1;
-            if(currentSlideIndex < 1) currentSlideIndex = totalSlides;
-            
-            slides[currentSlideIndex-1].classList.add('active');
-            updateDots();
-            updateProgress();
-        }
-        
-        function currentSlide(n) {
-            document.querySelectorAll('.slide')[currentSlideIndex-1].classList.remove('active');
-            currentSlideIndex = n;
-            document.querySelectorAll('.slide')[currentSlideIndex-1].classList.add('active');
-            updateDots();
-            updateProgress();
-        }
-        
-        function updateDots() {
-            document.querySelectorAll('.nav-dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i+1 === currentSlideIndex);
-            });
-        }
-        
-        function updateProgress() {
-            document.querySelector('.progress-fill').style.width = 
-                (currentSlideIndex/totalSlides)*100 + '%';
-        }
-        
-        // Keyboard
-        document.addEventListener('keydown', e => {
-            if(e.key === 'ArrowLeft') changeSlide(-1);
-            if(e.key === 'ArrowRight') changeSlide(1);
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            controls: false,
+            progress: true,
+            center: false,
+            transition: 'fade',
+            transitionSpeed: 'fast',
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0
         });
     </script>
 </body>
